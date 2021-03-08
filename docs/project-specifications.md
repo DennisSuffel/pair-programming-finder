@@ -2,25 +2,6 @@
 
 In this file I want to write down my initial ideas for this pet project.
 
-## Methodical Specifications
-
-I want to learn Test Driven Development (TDD) and in this project I want to get used to the development cycle of TDD.  
-So a requirement of the project is to use TDD.
-
-## Technical Specifications
-
-The following technologies will be used in my pet project:
-- Frontend
-  - [Angular](https://angular.io/)
-  - [Jasmine](https://jasmine.github.io/) 
-- Backend
-  - [Spring Boot](https://spring.io/projects/spring-boot)
-  - [JUnit5](https://junit.org/junit5/)
-  - [Swagger](https://swagger.io/) (I think Swagger is a cool framework but I'm not sure, if I'll really use it, because there are many other new things to learn and this could be a burden at the moment)
-
-I know the classic Spring framework and am learning Angular at the moment, so I decided for Angular and Spring Boot as the main technologies of frontend and backend.  
-This way I can get more practice and deepen my knowledge  in both of them.
-
 ## Funtional Specifications
 	
 Now to the actual idea of the pet project:
@@ -40,6 +21,22 @@ Now to the actual idea of the pet project:
     - The preferred times for the pair programming sessions
     - My contact details (Mail, Twitter, LinkedIn, WhatsApp, Discord, ...)
 6. As a user, I want to recieve recomendations about other users, who would fit to my profile, so that I can find better pair programming partners in a simple way.
+
+## Methodical Specifications
+
+A requirement of the project is to use TDD.
+
+## Technical Specifications
+
+The following technologies will be used in my pet project:
+- Frontend
+  - [Angular](https://angular.io/)
+  - [Jasmine](https://jasmine.github.io/) 
+- Backend
+  - [Spring Boot](https://spring.io/projects/spring-boot)
+  - [JUnit5](https://junit.org/junit5/)
+  - [Swagger](https://swagger.io/) (I think Swagger is a cool framework but I'm not sure, if I'll really use it, because there are many other new things to learn and this could be a burden at the moment)
+
 
 ## Further Ideas
 
