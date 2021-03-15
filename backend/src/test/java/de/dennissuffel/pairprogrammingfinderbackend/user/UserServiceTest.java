@@ -1,4 +1,4 @@
-package de.dennissuffel.pairprogrammingfinderbackend.service;
+package de.dennissuffel.pairprogrammingfinderbackend.user;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -15,9 +15,10 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import de.dennissuffel.pairprogrammingfinderbackend.dataAccess.UserRepository;
-import de.dennissuffel.pairprogrammingfinderbackend.model.SessionType;
-import de.dennissuffel.pairprogrammingfinderbackend.model.User;
+import de.dennissuffel.pairprogrammingfinderbackend.user.UserRepository;
+import de.dennissuffel.pairprogrammingfinderbackend.user.UserService;
+import de.dennissuffel.pairprogrammingfinderbackend.user.model.SessionType;
+import de.dennissuffel.pairprogrammingfinderbackend.user.model.User;
 
 @ExtendWith(MockitoExtension.class)
 public class UserServiceTest {

@@ -1,4 +1,4 @@
-package de.dennissuffel.pairprogrammingfinderbackend.dataAccess;
+package de.dennissuffel.pairprogrammingfinderbackend.user;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -8,8 +8,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import de.dennissuffel.pairprogrammingfinderbackend.model.SessionType;
-import de.dennissuffel.pairprogrammingfinderbackend.model.User;
+import de.dennissuffel.pairprogrammingfinderbackend.user.model.SessionType;
+import de.dennissuffel.pairprogrammingfinderbackend.user.model.User;
 
 @Component
 public class UserRepository {

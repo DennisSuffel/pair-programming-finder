@@ -1,4 +1,4 @@
-package de.dennissuffel.pairprogrammingfinderbackend.service;
+package de.dennissuffel.pairprogrammingfinderbackend.user;
 
 import java.net.MalformedURLException;
 import java.util.List;
@@ -6,8 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import de.dennissuffel.pairprogrammingfinderbackend.dataAccess.UserRepository;
-import de.dennissuffel.pairprogrammingfinderbackend.model.User;
+import de.dennissuffel.pairprogrammingfinderbackend.user.model.User;
 
 @Service
 public class UserService {

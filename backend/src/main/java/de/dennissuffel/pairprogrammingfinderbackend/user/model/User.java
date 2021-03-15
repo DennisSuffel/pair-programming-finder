@@ -1,4 +1,4 @@
-package de.dennissuffel.pairprogrammingfinderbackend.model;
+package de.dennissuffel.pairprogrammingfinderbackend.user.model;
 
 import java.net.URL;
 import java.util.List;
