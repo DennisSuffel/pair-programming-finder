@@ -24,7 +24,7 @@ Now to the actual idea of the pet project:
 
 ## Methodical Specifications
 
-A requirement of the project is to use TDD.
+A requirement of the project is to use [Test Driven Development](http://www.jamesshore.com/v2/books/aoad1/test_driven_development).
 
 ## Technical Specifications
 
