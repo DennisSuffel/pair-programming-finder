@@ -74,4 +74,59 @@ public class User {
 		this.videoConferenceTools = videoConferenceTools;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((area == null) ? 0 : area.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((interests == null) ? 0 : interests.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((preferedSessionType == null) ? 0 : preferedSessionType.hashCode());
+		result = prime * result + ((profilePictureUrl == null) ? 0 : profilePictureUrl.hashCode());
+		result = prime * result + ((videoConferenceTools == null) ? 0 : videoConferenceTools.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (area == null) {
+			if (other.area != null)
+				return false;
+		} else if (!area.equals(other.area))
+			return false;
+		if (id != other.id)
+			return false;
+		if (interests == null) {
+			if (other.interests != null)
+				return false;
+		} else if (!interests.equals(other.interests))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (preferedSessionType != other.preferedSessionType)
+			return false;
+		if (profilePictureUrl == null) {
+			if (other.profilePictureUrl != null)
+				return false;
+		} else if (!profilePictureUrl.equals(other.profilePictureUrl))
+			return false;
+		if (videoConferenceTools == null) {
+			if (other.videoConferenceTools != null)
+				return false;
+		} else if (!videoConferenceTools.equals(other.videoConferenceTools))
+			return false;
+		return true;
+	}
+
 }
