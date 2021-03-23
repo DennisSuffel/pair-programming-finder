@@ -144,6 +144,10 @@ public class User {
 		return true;
 	}
 
-	// TODO: Add toString
-
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", profilePictureUrl=" + profilePictureUrl + ", interests="
+				+ interests + ", preferedSessionType=" + preferedSessionType + ", area=" + area
+				+ ", videoConferenceTools=" + videoConferenceTools + "]";
+	}
 }
