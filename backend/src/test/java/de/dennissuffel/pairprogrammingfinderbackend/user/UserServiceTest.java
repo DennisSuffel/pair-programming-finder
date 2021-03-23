@@ -16,6 +16,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
 import de.dennissuffel.pairprogrammingfinderbackend.TestDataCreator;
+import de.dennissuffel.pairprogrammingfinderbackend.TestUtil;
 import de.dennissuffel.pairprogrammingfinderbackend.user.model.User;
 
 @ExtendWith(MockitoExtension.class)
@@ -24,7 +25,6 @@ public class UserServiceTest {
 	@Mock
 	private UserRepository userRepositoryMock;
 
-	// TODO: Refactor to use a deep copy for the mock in all existing tests so far
 	/*
 	 * TODO: Remove throws declaration as soon as errorhandling in UserRepository is
 	 * created.
@@ -39,7 +39,7 @@ public class UserServiceTest {
 		 * test. Here are some tips:
 		 * https://medium.com/@pablisco/the-hidden-costs-of-mock-injection-cb5aaf2a7fe3
 		 */
-		Mockito.when(this.userRepositoryMock.readAllUsers()).thenReturn(expectedAllUsers);
+		Mockito.when(this.userRepositoryMock.readAllUsers()).thenReturn(TestUtil.deepCopyUsersList(expectedAllUsers));
 
 		UserService userService = new UserService(this.userRepositoryMock);
 		List<User> actualAllUsers = userService.findAllUsers();
