@@ -1,6 +1,8 @@
 package de.dennissuffel.pairprogrammingfinderbackend.user.model;
 
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -17,6 +19,19 @@ public class User {
 	private String area;
 
 	private List<String> videoConferenceTools;
+
+	public User(User that) throws MalformedURLException {
+		this.id = that.getId();
+		this.name = that.getName();
+		this.profilePictureUrl = new URL(that.getProfilePictureUrl().toExternalForm());
+		this.interests = new ArrayList<>(that.getInterests());
+		this.preferedSessionType = that.getPreferedSessionType();
+		this.area = that.getArea();
+		this.videoConferenceTools = new ArrayList<>(that.getVideoConferenceTools());
+	}
+
+	public User() {
+	}
 
 	public int getId() {
 		return id;
@@ -128,5 +143,7 @@ public class User {
 			return false;
 		return true;
 	}
+
+	// TODO: Add toString
 
 }

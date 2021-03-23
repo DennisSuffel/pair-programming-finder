@@ -27,12 +27,14 @@ public class UserBuilderTest {
 	}
 
 	@BeforeEach
-	public void initializeUserBuilderWithValues() {
+	public void initializeUserBuilderWithValues() throws MalformedURLException {
 
-		this.userBuilderToTest = new UserBuilder().setId(expectedUser.getId()).setName(expectedUser.getName())
-				.setProfilePictureUrl(expectedUser.getProfilePictureUrl()).setInterests(expectedUser.getInterests())
-				.setPreferedSessionType(expectedUser.getPreferedSessionType()).setArea(expectedUser.getArea())
-				.setVideoConferenceTools(expectedUser.getVideoConferenceTools());
+		User deepCopy = new User(expectedUser);
+
+		this.userBuilderToTest = new UserBuilder().setId(deepCopy.getId()).setName(deepCopy.getName())
+				.setProfilePictureUrl(deepCopy.getProfilePictureUrl()).setInterests(deepCopy.getInterests())
+				.setPreferedSessionType(deepCopy.getPreferedSessionType()).setArea(deepCopy.getArea())
+				.setVideoConferenceTools(deepCopy.getVideoConferenceTools());
 	}
 
 	@Test
