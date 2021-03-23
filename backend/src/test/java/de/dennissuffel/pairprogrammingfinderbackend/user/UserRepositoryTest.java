@@ -20,6 +20,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import de.dennissuffel.pairprogrammingfinderbackend.TestDataCreator;
+import de.dennissuffel.pairprogrammingfinderbackend.TestUtil;
 import de.dennissuffel.pairprogrammingfinderbackend.user.model.User;
 
 @ExtendWith(MockitoExtension.class)
@@ -34,12 +35,10 @@ public class UserRepositoryTest {
 		List<User> expectedUsers = TestDataCreator.createTwoUsers();
 
 		Mockito.when(this.mapper.readValue(Mockito.any(File.class), ArgumentMatchers.<TypeReference<List<User>>>any()))
-				.thenReturn(expectedUsers);
+				.thenReturn(TestUtil.deepCopyUsersList(expectedUsers));
 
 		UserRepository userRepo = new UserRepository(this.mapper);
 		List<User> actualUsers = userRepo.readAllUsers();
-
-		actualUsers.get(0).setArea(null);
 
 		assertNotNull(actualUsers);
 
