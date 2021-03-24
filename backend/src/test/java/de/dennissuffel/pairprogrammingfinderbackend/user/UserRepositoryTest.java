@@ -1,7 +1,6 @@
 package de.dennissuffel.pairprogrammingfinderbackend.user;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,14 +39,7 @@ public class UserRepositoryTest {
 		UserRepository userRepo = new UserRepository(this.mapper);
 		List<User> actualUsers = userRepo.readAllUsers();
 
-		assertNotNull(actualUsers);
-
-		// TODO Refactor to use equals List method instead of this construct
-		assertEquals(expectedUsers.size(), actualUsers.size());
-
-		for (int i = 0; i < expectedUsers.size(); i++) {
-			assertEquals(expectedUsers.get(i), actualUsers.get(i), "element at index " + i + " is not equal.");
-		}
+		assertEquals(expectedUsers, actualUsers);
 	}
 
 }
