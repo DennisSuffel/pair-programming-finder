@@ -1,0 +1,32 @@
+[
+	{
+		"id": 111111,
+		"name": "TestName1",
+		"profilePictureUrl": "https://www.test.test",
+		"interests": [
+			"Java",
+			"TDD"
+		],
+		"preferedSessionType": "BOTH",
+		"area": "Frankfurt",
+		"videoConferenceTools": [
+			"Zoom",
+			"MS Teams"
+		]
+	},
+	{
+		"id": 22222,
+		"name": "TestName2",
+		"profilePictureUrl": "https://www.test2.test",
+		"interests": [
+			"C#",
+			"Code Katas"
+		],
+		"preferedSessionType": "LOCAL",
+		"area": "Paris",
+		"videoConferenceTools": [
+			"Skype",
+			"Lifesize"
+		]
+	}
+]

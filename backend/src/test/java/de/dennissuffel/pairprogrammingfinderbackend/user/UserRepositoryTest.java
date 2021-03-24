@@ -2,8 +2,8 @@ package de.dennissuffel.pairprogrammingfinderbackend.user;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -33,7 +33,8 @@ public class UserRepositoryTest {
 
 		List<User> expectedUsers = TestDataCreator.createTwoUsers();
 
-		Mockito.when(this.mapper.readValue(Mockito.any(File.class), ArgumentMatchers.<TypeReference<List<User>>>any()))
+		Mockito.when(this.mapper.readValue(Mockito.any(InputStream.class),
+				ArgumentMatchers.<TypeReference<List<User>>>any()))
 				.thenReturn(TestUtil.deepCopyUsersList(expectedUsers));
 
 		UserRepository userRepo = new UserRepository(this.mapper);

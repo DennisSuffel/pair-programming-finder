@@ -1,6 +1,5 @@
 package de.dennissuffel.pairprogrammingfinderbackend.user;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -18,6 +17,8 @@ public class UserRepository {
 
 	private ObjectMapper mapper;
 
+	private String filePath = "/user/users.json";
+
 	public UserRepository() {
 		this.mapper = new ObjectMapper();
 	}
@@ -31,9 +32,9 @@ public class UserRepository {
 		 * TODO: Errohandling for the exception, that are in the throws declaration at
 		 * the moment
 		 */
-		// TODO: add integration test for correct file reading
-		return this.mapper.readValue(new File("//src/main/resources/user/users.json"), new TypeReference<List<User>>() {
-		});
+		return this.mapper.readValue(UserRepository.class.getResourceAsStream(this.filePath),
+				new TypeReference<List<User>>() {
+				});
 	}
 
 }
