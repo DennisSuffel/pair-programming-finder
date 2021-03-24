@@ -20,7 +20,7 @@ public class TestDataCreator {
 				.setVideoConferenceTools(new ArrayList<String>(Arrays.asList(new String[] { "Zoom", "MS Teams" })))
 				.build();
 
-		User user2 = new UserBuilder().setId(111111).setName("TestName2")
+		User user2 = new UserBuilder().setId(22222).setName("TestName2")
 				.setProfilePictureUrl(new URL("https://www.test2.test"))
 				.setInterests(new ArrayList<String>(Arrays.asList(new String[] { "C#", "Code Katas" })))
 				.setPreferedSessionType(SessionType.LOCAL).setArea("Paris")
