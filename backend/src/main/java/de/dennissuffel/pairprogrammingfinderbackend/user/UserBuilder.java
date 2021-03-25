@@ -1,10 +1,10 @@
-package de.dennissuffel.pairprogrammingfinderbackend.user;
+package de.dennissuffel.pairProgrammingFinderBackend.user;
 
 import java.net.URL;
 import java.util.List;
 
-import de.dennissuffel.pairprogrammingfinderbackend.user.model.SessionType;
-import de.dennissuffel.pairprogrammingfinderbackend.user.model.User;
+import de.dennissuffel.pairProgrammingFinderBackend.user.model.SessionType;
+import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
 
 public class UserBuilder {
 

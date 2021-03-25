@@ -1,4 +1,4 @@
-package de.dennissuffel.pairprogrammingfinderbackend.user.model;
+package de.dennissuffel.pairProgrammingFinderBackend.user.model;
 
 import java.net.MalformedURLException;
 import java.net.URL;

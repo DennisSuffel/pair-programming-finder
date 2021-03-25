@@ -1,4 +1,4 @@
-package de.dennissuffel.pairprogrammingfinderbackend.user;
+package de.dennissuffel.pairProgrammingFinderBackend.user;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,7 +10,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import de.dennissuffel.pairprogrammingfinderbackend.user.model.User;
+import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
 
 @Component
 public class UserRepository {

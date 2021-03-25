@@ -1,4 +1,4 @@
-package de.dennissuffel.pairprogrammingfinderbackend;
+package de.dennissuffel.pairProgrammingFinderBackend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

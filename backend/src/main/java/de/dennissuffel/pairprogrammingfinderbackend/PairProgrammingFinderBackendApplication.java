@@ -1,4 +1,4 @@
-package de.dennissuffel.pairprogrammingfinderbackend;
+package de.dennissuffel.pairProgrammingFinderBackend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

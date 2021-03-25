@@ -1,4 +1,4 @@
-package de.dennissuffel.pairprogrammingfinderbackend.user;
+package de.dennissuffel.pairProgrammingFinderBackend.user;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
-import de.dennissuffel.pairprogrammingfinderbackend.user.model.User;
+import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
 
 @Service
 public class UserService {

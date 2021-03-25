@@ -1,4 +1,4 @@
-package de.dennissuffel.pairprogrammingfinderbackend.user;
+package de.dennissuffel.pairProgrammingFinderBackend.user;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -8,8 +8,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import de.dennissuffel.pairprogrammingfinderbackend.TestDataCreator;
-import de.dennissuffel.pairprogrammingfinderbackend.user.model.User;
+import de.dennissuffel.pairProgrammingFinderBackend.TestDataCreator;
+import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
 
 public class UserBuilderTest {
 

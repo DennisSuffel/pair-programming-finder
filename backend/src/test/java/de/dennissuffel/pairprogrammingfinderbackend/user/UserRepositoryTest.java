@@ -1,4 +1,4 @@
-package de.dennissuffel.pairprogrammingfinderbackend.user;
+package de.dennissuffel.pairProgrammingFinderBackend.user;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,9 +18,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import de.dennissuffel.pairprogrammingfinderbackend.TestDataCreator;
-import de.dennissuffel.pairprogrammingfinderbackend.TestUtil;
-import de.dennissuffel.pairprogrammingfinderbackend.user.model.User;
+import de.dennissuffel.pairProgrammingFinderBackend.TestDataCreator;
+import de.dennissuffel.pairProgrammingFinderBackend.TestUtil;
+import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
 
 @ExtendWith(MockitoExtension.class)
 public class UserRepositoryTest {

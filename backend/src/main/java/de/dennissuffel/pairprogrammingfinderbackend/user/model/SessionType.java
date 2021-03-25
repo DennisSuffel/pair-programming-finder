@@ -1,4 +1,4 @@
-package de.dennissuffel.pairprogrammingfinderbackend.user.model;
+package de.dennissuffel.pairProgrammingFinderBackend.user.model;
 
 public enum SessionType {
 	LOCAL, REMOTE, BOTH

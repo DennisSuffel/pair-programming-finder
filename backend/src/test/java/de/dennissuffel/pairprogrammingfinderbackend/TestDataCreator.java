@@ -1,4 +1,4 @@
-package de.dennissuffel.pairprogrammingfinderbackend;
+package de.dennissuffel.pairProgrammingFinderBackend;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import de.dennissuffel.pairprogrammingfinderbackend.user.UserBuilder;
-import de.dennissuffel.pairprogrammingfinderbackend.user.model.SessionType;
-import de.dennissuffel.pairprogrammingfinderbackend.user.model.User;
+import de.dennissuffel.pairProgrammingFinderBackend.user.UserBuilder;
+import de.dennissuffel.pairProgrammingFinderBackend.user.model.SessionType;
+import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
 
 public class TestDataCreator {
 
