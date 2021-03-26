@@ -19,7 +19,7 @@
 
 	<properties>
 		<java.version>11</java.version>
-		<integretiontests.path>**/*IntegrationTest</integretiontests.path>
+		<group.integrationtests>IntegrationTest</group.integrationtests>
 	</properties>
 
 	<dependencies>
@@ -47,16 +47,20 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
-					<excludes>${integretiontests.path}</excludes>
+					<excludedGroups>${group.integrationtests}</excludedGroups>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
 				<configuration>
-					<includes>${integretiontests.path}</includes>
+					<includes>
+				        <include>**/*.java</include>
+				    </includes>
+					<groups>${group.integrationtests}</groups>
 				</configuration>
 			</plugin>
 		</plugins>

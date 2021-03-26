@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.io.IOException;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -13,6 +14,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import de.dennissuffel.pairProgrammingFinderBackend.TestDataCreator;
 import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
 
+@Tag("IntegrationTest")
 public class UserRepositoryIntegrationTest {
 
 	@Test
