@@ -1,0 +1,58 @@
+swagger: "2.0"
+info:
+#  description: "Markdown"
+  version: "0.0.1-SNAPSHOT"
+  title: "pair-programming-finder"
+#host: "petstore.swagger.io"
+#basePath: "/v2"
+tags:
+- name: "user"
+  description: "Operations about user"
+schemes:
+- "https"
+- "http"
+paths:
+  /user/all:
+    get:
+      tags:
+      - "user"
+      summary: "Get all users"
+      description: "Retrieve all Users"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AllUsers'
+definitions:
+  User:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+      profilePictureUrlString:
+        type: "string"
+      interests:
+        type: "array"
+        items:
+          type: "string"
+      preferedSessionType:
+        type: "string"
+        enum: [LOCAL, REMOTE, BOTH]
+      area:
+        type: "string"
+      videoConferenceTools:
+        type: "array"
+        items:
+          type: "string"
+  AllUsers:
+    type: "array"
+    items:
+      $ref: '#/definitions/User'
+externalDocs:
+  description: "Github Page of the project"
+  url: "https://github.com/DennisSuffel/pair-programming-finder"
