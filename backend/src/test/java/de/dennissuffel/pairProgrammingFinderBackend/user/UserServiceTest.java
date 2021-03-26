@@ -32,12 +32,6 @@ public class UserServiceTest {
 	public void findAllUsers() throws JsonParseException, JsonMappingException, IOException {
 
 		List<User> expectedAllUsers = TestDataCreator.createTwoUsers();
-		/*
-		 * TODO: Test takes around 450ms to complete. Check if maybe stubbing instead of
-		 * mocking is faster. The extra functionality of a mock is not needed in this
-		 * test. Here are some tips:
-		 * https://medium.com/@pablisco/the-hidden-costs-of-mock-injection-cb5aaf2a7fe3
-		 */
 		Mockito.when(this.userRepositoryMock.readAllUsers()).thenReturn(TestUtil.deepCopyUsersList(expectedAllUsers));
 
 		UserService userService = new UserService(this.userRepositoryMock);
