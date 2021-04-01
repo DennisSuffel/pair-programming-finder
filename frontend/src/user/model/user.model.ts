@@ -1,13 +1,15 @@
-export class User {
-  public id: string;
-  public name: string;
-  public profilePictureUrl: string;
-  public interests: string[];
-  public preferedSessionType: SessionType;
-  public area: string;
-  public videoConferenceTools: string[];
+import { SessionType } from "./sessionType.enum";
 
-  constructor(id: string, name: string, profilePictureUrl: string, interests: string[], preferedSessionType: SessionType, area: string, videoConferenceTools: string[]) {
+export class User {
+  private id: number;
+  private name: string;
+  private profilePictureUrl: string;
+  private interests: string[];
+  private preferedSessionType: SessionType;
+  private area: string;
+  private videoConferenceTools: string[];
+
+  constructor(id: number, name: string, profilePictureUrl: string, interests: string[], preferedSessionType: SessionType, area: string, videoConferenceTools: string[]) {
     this.id = id;
     this.name = name;
     this.profilePictureUrl = profilePictureUrl;

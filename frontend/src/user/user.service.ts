@@ -11,6 +11,6 @@ export class UserService {
   constructor() { }
 
   public getAllUsers(): User[] {
-    return [new User('111', 'test', 'www.test.test', ['Java', 'Pair Programming'], SessionType.REMOTE, '', ['Zoom'])];
+    return [new User(111, 'test', 'www.test.test', ['Java', 'Pair Programming'], SessionType.REMOTE, '', ['Zoom'])];
   }
 }
