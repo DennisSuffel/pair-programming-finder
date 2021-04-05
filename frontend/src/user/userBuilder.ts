@@ -47,7 +47,8 @@ export class UserBuilder {
     return this.user;
   }
 
-  public reset(): void {
+  public reset(): UserBuilder {
     this.user = new User();
+    return this;
   }
 }
