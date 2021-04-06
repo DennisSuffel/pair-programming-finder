@@ -1,7 +1,7 @@
 # pair-programming-finder
 > A pet project to get experience in Angular and Spring Boot
 
-![GitHub last commit](https://img.shields.io/github/last-commit/DennisSuffel/angular-course-project)
+![GitHub last commit](https://img.shields.io/github/last-commit/DennisSuffel/pair-programming-finder)
 
 ## Introduction
 This pet project aims to be a platform for developers, who want to find a partner for an online or local pair programming session.  
