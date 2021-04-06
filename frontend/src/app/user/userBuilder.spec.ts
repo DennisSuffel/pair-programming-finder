@@ -36,7 +36,6 @@ describe('UserBuilder', () => {
     expect(Object.assign({}, actualUser)).toEqual(
       Object.assign({}, expectedUser)
     );
-    // expect(actualUser).toEqual(expectedUser);
   });
 
   it('should build a default user when reseted', () => {
