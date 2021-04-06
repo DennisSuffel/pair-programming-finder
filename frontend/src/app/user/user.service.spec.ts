@@ -44,6 +44,7 @@ describe('UserService', () => {
     }
   ));
 
+  // TODO: Deep copy the test data
   it('should return a filled list of users', inject(
     [HttpTestingController, UserService],
     (httpMock: HttpTestingController, service: UserService) => {
