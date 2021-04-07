@@ -1,5 +1,5 @@
 <div class="content">
   <h1>{{ title }}</h1>
 
-  <div *ngFor="let user of users">{{ user.name }}</div>
+  <app-user-card *ngFor="let user of users" [user]="user"></app-user-card>
 </div>
