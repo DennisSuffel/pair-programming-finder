@@ -18,18 +18,18 @@
             <span class="badge badge-secondary">{{ interestedIn }}</span>
           </div>
         </div>
-        <div *ngIf="user.preferedSessionType === 'REMOTE' || user.preferedSessionType === 'BOTH' " class="row">
+        <div *ngIf="userWantsRemoteSession()" class="row">
           <span>Meeting Tools:</span>
         </div>
-        <div class="row">
+        <div *ngIf="userWantsRemoteSession()" class="row">
           <div *ngFor="let tool of user.videoConferenceTools" class="mx-1">
             <span class="badge badge-secondary">{{ tool }}</span>
           </div>
         </div>
-        <div *ngIf="user.preferedSessionType === 'LOCAL' || user.preferedSessionType === 'BOTH' " class="row">
+        <div *ngIf="userWantsLocalSession()" class="row">
           <span>Area:</span>
         </div>
-        <div class="row">
+        <div *ngIf="userWantsLocalSession()" class="row">
           <div class="mx-1">
             <span class="badge badge-secondary">{{ user.area }}</span>
           </div>
