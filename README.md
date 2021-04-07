@@ -21,3 +21,6 @@ In Addition I want to get to know Test Driven Development (TDD) in practise and 
  
 ## Project Specifications
 You can find the specifications of the pet project here: [/docs/project-specifications.md](/docs/project-specifications.md).
+
+## Sample Data
+I took the data for the users from https://randomuser.me (Copyright (c) 2017 RandomAPI / [MIT License](https://github.com/RandomAPI/Randomuser.me-Node/blob/master/LICENSE)).
