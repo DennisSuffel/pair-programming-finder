@@ -64,7 +64,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content h1').textContent).toContain(
+    expect(compiled.querySelector('h1').textContent).toContain(
       'Pair Programming Finder'
     );
   });
