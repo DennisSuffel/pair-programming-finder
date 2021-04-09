@@ -35,13 +35,12 @@ public class UserControllerTest {
 	@Test
 	public void getAllUsers() throws Exception {
 
-		// TODO: Type users
-		List<User> expectedUser = TestDataCreator.createTwoUsers();
-		when(this.userService.findAllUsers()).thenReturn(TestUtil.deepCopyUsersList(expectedUser));
+		List<User> expectedUsers = TestDataCreator.createTwoUsers();
+		when(this.userService.findAllUsers()).thenReturn(TestUtil.deepCopyUsersList(expectedUsers));
 
-		List<User> actuallUser = this.userController.getAllUsers();
+		List<User> actuallUsers = this.userController.getAllUsers();
 
-		assertEquals(expectedUser, actuallUser);
+		assertEquals(expectedUsers, actuallUsers);
 	}
 
 	@Test
