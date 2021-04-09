@@ -29,7 +29,7 @@ public class UserController {
 	}
 
 	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public User getUser(@PathVariable int id) {
+	public User getUser(@PathVariable int id) throws JsonParseException, JsonMappingException, IOException {
 		return this.userService.findUser(id);
 	}
 

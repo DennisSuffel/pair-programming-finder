@@ -21,14 +21,17 @@ public class UserService {
 		this.userRepository = userRepository;
 	}
 
-	public User findUser(int id) {
-		return null;
-	}
-
 	/*
 	 * TODO: Remove throws declaration as soon as errorhandling in UserRepository is
 	 * created
 	 */
+	/*
+	 * TODO: Errorhandling if id is not found
+	 */
+	public User findUser(int id) throws JsonParseException, JsonMappingException, IOException {
+		return this.userRepository.readUser(id);
+	}
+
 	public List<User> findAllUsers() throws JsonParseException, JsonMappingException, IOException {
 
 		return this.userRepository.readAllUsers();

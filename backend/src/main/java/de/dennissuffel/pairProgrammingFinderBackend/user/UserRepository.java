@@ -27,6 +27,10 @@ public class UserRepository {
 		this.mapper = mapper;
 	}
 
+	public User readUser(int id) throws JsonParseException, JsonMappingException, IOException {
+		return this.readAllUsers().stream().filter(user -> user.getId() == id).findFirst().get();
+	}
+
 	public List<User> readAllUsers() throws JsonParseException, JsonMappingException, IOException {
 		/*
 		 * TODO: Errohandling for the exception, that are in the throws declaration at
