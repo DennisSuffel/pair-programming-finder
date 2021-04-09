@@ -2,14 +2,10 @@ package de.dennissuffel.pairProgrammingFinderBackend.user;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 
 import de.dennissuffel.pairProgrammingFinderBackend.TestDataCreator;
 import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
@@ -18,7 +14,18 @@ import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
 public class UserRepositoryIntegrationTest {
 
 	@Test
-	public void readAllUsers() throws JsonParseException, JsonMappingException, IOException {
+	public void readUser() throws Exception {
+		UserRepository userRepo = new UserRepository();
+		// The expected users and the users in the test file are the same
+		List<User> expectedUsers = TestDataCreator.createTwoUsers();
+
+		User actualUser = userRepo.readUser(expectedUsers.get(0).getId());
+
+		assertEquals(expectedUsers.get(0), actualUser);
+	}
+
+	@Test
+	public void readAllUsers() throws Exception {
 
 		UserRepository userRepo = new UserRepository();
 		List<User> actualUsers = userRepo.readAllUsers();

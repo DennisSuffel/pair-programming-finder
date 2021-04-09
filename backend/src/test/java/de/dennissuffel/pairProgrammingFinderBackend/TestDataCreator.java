@@ -12,13 +12,19 @@ import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
 
 public class TestDataCreator {
 
-	public static List<User> createTwoUsers() throws MalformedURLException {
-		User user1 = new UserBuilder().setId(111111).setName("TestName1")
+	public static User createUser() throws MalformedURLException {
+		return new UserBuilder().setId(111111).setName("TestName1")
 				.setProfilePictureUrl(new URL("https://www.test.test"))
 				.setInterests(new ArrayList<String>(Arrays.asList(new String[] { "Java", "TDD" })))
 				.setPreferedSessionType(SessionType.BOTH).setArea("Frankfurt")
 				.setVideoConferenceTools(new ArrayList<String>(Arrays.asList(new String[] { "Zoom", "MS Teams" })))
 				.build();
+	}
+
+	public static List<User> createTwoUsers() throws MalformedURLException {
+
+		List<User> users = new ArrayList<User>();
+		users.add(TestDataCreator.createUser());
 
 		User user2 = new UserBuilder().setId(22222).setName("TestName2")
 				.setProfilePictureUrl(new URL("https://www.test2.test"))
@@ -26,9 +32,6 @@ public class TestDataCreator {
 				.setPreferedSessionType(SessionType.LOCAL).setArea("Paris")
 				.setVideoConferenceTools(new ArrayList<String>(Arrays.asList(new String[] { "Skype", "Lifesize" })))
 				.build();
-
-		List<User> users = new ArrayList<User>();
-		users.add(user1);
 		users.add(user2);
 
 		return users;

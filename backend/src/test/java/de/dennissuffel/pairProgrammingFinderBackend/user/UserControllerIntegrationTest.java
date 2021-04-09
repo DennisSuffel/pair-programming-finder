@@ -8,8 +8,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -26,11 +28,32 @@ import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
 @WebMvcTest
 public class UserControllerIntegrationTest {
 
+	private UserController userController;
+
 	@Autowired
 	private MockMvc mvc;
 
 	@MockBean
 	UserService userService;
+
+	@BeforeEach
+	public void initUserController() {
+		this.userController = new UserController(this.userService);
+	}
+
+	@Test
+	public void getUser() throws Exception {
+		User expectedUser = TestDataCreator.createUser();
+		when(this.userService.findUser(Mockito.anyInt())).thenReturn(new User(expectedUser));
+
+		User actualUser = this.userController.getUser(expectedUser.getId());
+
+		assertEquals(expectedUser, actualUser);
+
+		this.mvc.perform(get("/user/" + expectedUser.getId()).contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andExpect(content().json(new ObjectMapper().writeValueAsString(expectedUser)));
+	}
 
 	@Test
 	public void getAllUsers() throws Exception {
@@ -38,8 +61,7 @@ public class UserControllerIntegrationTest {
 		List<User> expectedUsers = TestDataCreator.createTwoUsers();
 		when(this.userService.findAllUsers()).thenReturn(TestUtil.deepCopyUsersList(expectedUsers));
 
-		UserController userController = new UserController(this.userService);
-		List<User> actualUsers = userController.getAllUsers();
+		List<User> actualUsers = this.userController.getAllUsers();
 
 		assertEquals(expectedUsers, actualUsers);
 
