@@ -5,19 +5,42 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "user")
 public class User {
-	private int id;
+
+	@Id
+	@GeneratedValue
+	private Integer id;
 
 	private String name;
 
 	private URL profilePictureUrl;
 
+	@ElementCollection
+	@CollectionTable(name = "user_interest", joinColumns = @JoinColumn(name = "user_id"))
+	@Column(name = "interest")
 	private List<String> interests;
 
+	@Enumerated(EnumType.STRING)
 	private SessionType preferedSessionType;
 
 	private String area;
 
+	@ElementCollection
+	@CollectionTable(name = "user_video_conference_tool", joinColumns = @JoinColumn(name = "user_id"))
+	@Column(name = "video_conference_tool")
 	private List<String> videoConferenceTools;
 
 	public User(User that) throws MalformedURLException {
@@ -33,11 +56,11 @@ public class User {
 	public User() {
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -94,7 +117,7 @@ public class User {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((area == null) ? 0 : area.hashCode());
-		result = prime * result + id;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((interests == null) ? 0 : interests.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((preferedSessionType == null) ? 0 : preferedSessionType.hashCode());
@@ -117,7 +140,10 @@ public class User {
 				return false;
 		} else if (!area.equals(other.area))
 			return false;
-		if (id != other.id)
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		if (interests == null) {
 			if (other.interests != null)

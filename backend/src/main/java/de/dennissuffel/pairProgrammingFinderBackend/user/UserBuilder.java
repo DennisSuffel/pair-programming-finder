@@ -8,7 +8,7 @@ import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
 
 public class UserBuilder {
 
-	private int id;
+	private Integer id;
 
 	private String name;
 
@@ -22,7 +22,7 @@ public class UserBuilder {
 
 	private List<String> videoConferenceTools;
 
-	public UserBuilder setId(int id) {
+	public UserBuilder setId(Integer id) {
 		this.id = id;
 		return this;
 	}
@@ -58,7 +58,7 @@ public class UserBuilder {
 	}
 
 	public UserBuilder reset() {
-		this.id = 0;
+		this.id = null;
 		this.name = null;
 		this.profilePictureUrl = null;
 		this.interests = null;

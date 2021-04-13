@@ -1,13 +1,9 @@
 package de.dennissuffel.pairProgrammingFinderBackend.user;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 
 import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
 
@@ -22,18 +18,14 @@ public class UserService {
 	}
 
 	/*
-	 * TODO: Remove throws declaration as soon as errorhandling in UserRepository is
-	 * created
-	 */
-	/*
 	 * TODO: Errorhandling if id is not found
 	 */
-	public User findUser(int id) throws JsonParseException, JsonMappingException, IOException {
-		return this.userRepository.readUser(id);
+	public User findUser(int id) {
+		return this.userRepository.getOne(id);
 	}
 
-	public List<User> findAllUsers() throws JsonParseException, JsonMappingException, IOException {
+	public List<User> findAllUsers() {
 
-		return this.userRepository.readAllUsers();
+		return this.userRepository.findAll();
 	}
 }
