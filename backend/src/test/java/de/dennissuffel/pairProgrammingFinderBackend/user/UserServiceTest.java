@@ -30,23 +30,19 @@ public class UserServiceTest {
 
 	@Test
 	public void findUser() throws Exception {
-		User expectedUser = TestDataCreator.createUser();
-		Mockito.when(this.userRepositoryMock.readUser(expectedUser.getId())).thenReturn(new User(expectedUser));
+		User expectedUser = TestDataCreator.createUser(true);
+		Mockito.when(this.userRepositoryMock.getOne(expectedUser.getId())).thenReturn(new User(expectedUser));
 
 		User actualUser = this.userService.findUser(expectedUser.getId());
 
 		assertEquals(expectedUser, actualUser);
 	}
 
-	/*
-	 * TODO: Remove throws declaration as soon as errorhandling in UserRepository is
-	 * created.
-	 */
 	@Test
 	public void findAllUsers() throws Exception {
 
-		List<User> expectedAllUsers = TestDataCreator.createTwoUsers();
-		Mockito.when(this.userRepositoryMock.readAllUsers()).thenReturn(TestUtil.deepCopyUsersList(expectedAllUsers));
+		List<User> expectedAllUsers = TestDataCreator.createTwoUsers(true);
+		Mockito.when(this.userRepositoryMock.findAll()).thenReturn(TestUtil.deepCopyUsersList(expectedAllUsers));
 
 		List<User> actualAllUsers = userService.findAllUsers();
 

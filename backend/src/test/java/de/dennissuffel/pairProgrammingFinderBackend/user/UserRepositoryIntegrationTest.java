@@ -4,36 +4,58 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
 import de.dennissuffel.pairProgrammingFinderBackend.TestDataCreator;
 import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
 
 @Tag("IntegrationTest")
+@DataJpaTest
 public class UserRepositoryIntegrationTest {
+
+	@Autowired
+	private TestEntityManager entityManager;
+
+	@Autowired
+	private UserRepository userRepository;
+
+	private List<User> expectedUsers;
+
+	@BeforeEach
+	public void initDatabase() throws Exception {
+		this.expectedUsers = TestDataCreator.createTwoUsers(false);
+
+		this.entityManager.clear();
+
+		for (User expectedUser : this.expectedUsers) {
+			expectedUser.setId(null);
+
+			User deepCopyOfExpectedUser = new User(expectedUser);
+			this.entityManager.persist(deepCopyOfExpectedUser);
+			this.entityManager.flush();
+
+			expectedUser.setId(deepCopyOfExpectedUser.getId());
+		}
+	}
 
 	@Test
 	public void readUser() throws Exception {
-		UserRepository userRepo = new UserRepository();
-		// The expected users and the users in the test file are the same
-		List<User> expectedUsers = TestDataCreator.createTwoUsers();
 
-		User actualUser = userRepo.readUser(expectedUsers.get(0).getId());
+		User actualUser = this.userRepository.getOne(expectedUsers.get(0).getId());
 
-		assertEquals(expectedUsers.get(0), actualUser);
+		assertEquals(this.expectedUsers.get(0), actualUser);
 	}
 
 	@Test
 	public void readAllUsers() throws Exception {
 
-		UserRepository userRepo = new UserRepository();
-		List<User> actualUsers = userRepo.readAllUsers();
+		List<User> actualUsers = this.userRepository.findAll();
 
-		// The expected users and the users in the test file are the same
-		List<User> expectedUsers = TestDataCreator.createTwoUsers();
-
-		assertEquals(expectedUsers, actualUsers);
+		assertEquals(this.expectedUsers, actualUsers);
 	}
-
 }

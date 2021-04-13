@@ -35,7 +35,7 @@ public class UserControllerTest {
 	@Test
 	public void getAllUsers() throws Exception {
 
-		List<User> expectedUsers = TestDataCreator.createTwoUsers();
+		List<User> expectedUsers = TestDataCreator.createTwoUsers(true);
 		when(this.userService.findAllUsers()).thenReturn(TestUtil.deepCopyUsersList(expectedUsers));
 
 		List<User> actuallUsers = this.userController.getAllUsers();
@@ -46,7 +46,7 @@ public class UserControllerTest {
 	@Test
 	public void getUser() throws Exception {
 
-		User expectedUser = TestDataCreator.createUser();
+		User expectedUser = TestDataCreator.createUser(true);
 		when(this.userService.findUser(Mockito.anyInt())).thenReturn(new User(expectedUser));
 
 		User actualUser = this.userController.getUser(expectedUser.getId());

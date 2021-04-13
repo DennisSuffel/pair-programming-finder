@@ -12,27 +12,35 @@ import de.dennissuffel.pairProgrammingFinderBackend.user.model.User;
 
 public class TestDataCreator {
 
-	public static User createUser() throws MalformedURLException {
-		return new UserBuilder().setId(111111).setName("TestName1")
+	public static User createUser(boolean withId) throws MalformedURLException {
+		UserBuilder userBuilder = new UserBuilder().setName("TestName1")
 				.setProfilePictureUrl(new URL("https://www.test.test"))
 				.setInterests(new ArrayList<String>(Arrays.asList(new String[] { "Java", "TDD" })))
 				.setPreferedSessionType(SessionType.BOTH).setArea("Frankfurt")
-				.setVideoConferenceTools(new ArrayList<String>(Arrays.asList(new String[] { "Zoom", "MS Teams" })))
-				.build();
+				.setVideoConferenceTools(new ArrayList<String>(Arrays.asList(new String[] { "Zoom", "MS Teams" })));
+
+		if (withId) {
+			userBuilder.setId(111111);
+		}
+		return userBuilder.build();
 	}
 
-	public static List<User> createTwoUsers() throws MalformedURLException {
+	public static List<User> createTwoUsers(boolean withId) throws MalformedURLException {
 
 		List<User> users = new ArrayList<User>();
-		users.add(TestDataCreator.createUser());
+		users.add(TestDataCreator.createUser(withId));
 
-		User user2 = new UserBuilder().setId(22222).setName("TestName2")
+		UserBuilder userBuilder = new UserBuilder().setName("TestName2")
 				.setProfilePictureUrl(new URL("https://www.test2.test"))
 				.setInterests(new ArrayList<String>(Arrays.asList(new String[] { "C#", "Code Katas" })))
 				.setPreferedSessionType(SessionType.LOCAL).setArea("Paris")
-				.setVideoConferenceTools(new ArrayList<String>(Arrays.asList(new String[] { "Skype", "Lifesize" })))
-				.build();
-		users.add(user2);
+				.setVideoConferenceTools(new ArrayList<String>(Arrays.asList(new String[] { "Skype", "Lifesize" })));
+
+		if (withId) {
+			userBuilder.setId(22222);
+		}
+
+		users.add(userBuilder.build());
 
 		return users;
 	}
